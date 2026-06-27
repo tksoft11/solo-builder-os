@@ -1,50 +1,149 @@
+<div align="center">
+
 # Solo Builder OS 🚀
 
-> Turn your vague ideas into world-class, execution-ready startup plans using AI.
+**An open-source framework of 9 AI Agents that turns a raw idea into a world-class product plan.**
 
-**Solo Builder OS** is an orchestration framework of AI Agents designed specifically for Solo Founders and Indie Hackers. It forces AI to stop acting like a "yes-man" chatbot and instead act like a rigorous, Silicon Valley-level product team.
+[![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![OpenAI](https://img.shields.io/badge/OpenAI-GPT--4o-green.svg)](https://openai.com/)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
-### 🥊 ChatGPT (Default) vs Solo Builder OS
-| Feature | ChatGPT / Claude | Solo Builder OS |
-| :--- | :--- | :--- |
-| **Mindset** | Sycophant ("Great idea! Here are 20 features to build.") | Red Team ("This is bloated. Let's cut 15 features to find the true MVP.") |
-| **Frameworks** | Generic advice. | Enforces First Principles, Blue Ocean, and Fogg Behavior models. |
-| **Workflow** | Linear prompt-and-response. | **Feedback Control Loop:** Agent-to-Agent handoffs with strict human approval gates. |
-| **Code output** | Boilerplate code with technical debt. | **Zero-Ops SOLID Architecture:** Focuses on Serverless, Jamstack, and high-velocity scaling. |
-
-## 🚀 NEW: True Automation & Autonomous Capabilities
-
-This repository is no longer just a "Prompt Library". It is a true operating system.
-
-- **[core-engine/](core-engine/) (The Autonomous ReAct Agent)**: We built a custom autonomous agent loop (similar to Devin or Claude Engineer). It uses OpenAI Function Calling to `read_file`, `write_file`, and `execute_command`. You give it a PRD, and it autonomously thinks, acts, and self-corrects until the code is written.
-- **[solo-os.py](solo-os.py)**: A Python CLI tool that automates the ideation workflow. It runs the Product Strategist, waits for your approval, and hands the context directly to the Market Researcher and PRD Writer.
-- **[ide-rules/cursorrules.md](ide-rules/cursorrules.md)**: Native integration for modern AI Editors (Cursor, Windsurf). Drop this file into your project, and your IDE will instantly adopt the "Staff-Level Architect" persona and enforce MVP scope.
-
-## 🌟 The Agent Team (World-Class Edition)
-
-Our team consists of 9 highly specialized Agents, each enforcing rigorous quality standards:
-
-1. **[Product Strategist](agents/product-strategist.md):** Cuts the fluff. Uses First Principles to find the core JTBD.
-2. **[Market Researcher](agents/market-researcher.md):** Finds your Blue Ocean and defines your Solo Moat.
-3. **[PRD Writer](agents/prd-writer.md):** Writes MECE requirements and Amazon-style PR/FAQs.
-4. **[Code Planner](agents/code-planner.md):** Designs SOLID, scalable, and zero-ops architectures.
-5. **[UX Planner](agents/ux-planner.md):** Uses the Fogg Behavior Model to design frictionless flows.
-6. **[Growth Marketer](agents/growth-marketer.md):** Engineers viral loops and writes AIDA copy.
-7. **[Monetization Advisor](agents/monetization-advisor.md):** Sets value-based pricing and anchoring strategies.
-8. **[Launch Operator](agents/launch-operator.md):** Orchestrates the launch campaign and defines KPIs.
-9. **[Quality Evaluator](agents/quality-evaluator.md):** The Red Team that brutally scrutinizes outputs before approval.
-
-## 🛠️ How it Works (The Workflow)
-
-1. Check out the [`workflows/idea-to-prd-workflow.md`](workflows/idea-to-prd-workflow.md) to see how the agents chain together.
-2. The core system relies on a **Feedback Control Loop**: No agent moves to the next step without the human founder reviewing and approving the artifact.
-
-## 💡 Example Projects
-
-Curious what a "World-Class" output looks like? Check out our End-to-End examples:
-
-- **[Thai Calendar PWA](examples/thai-calendar-pwa/README.md)**: A minimalist app for finding long weekends. Demonstrates extreme MVP scoping and behavioral design.
-- **[NicheTrend Radar](examples/trend-curator/README.md)**: A data-heavy Micro-SaaS for affiliate marketers. Demonstrates API integrations, Chron jobs, and B2B pricing.
+</div>
 
 ---
-*Built with ❤️ for the Solo Founder.*
+
+## What it actually does (no hype)
+
+Most AI tools help you build the wrong thing faster. Solo Builder OS forces the AI to **behave like a rigorous product team** — one that pushes back, cuts scope, and demands evidence before moving forward.
+
+It runs a sequential 9-agent pipeline, where **every agent's output is reviewed by you before the next agent begins** (the Feedback Control Loop). The result is a complete, validated product plan saved to your disk.
+
+```
+Your Idea
+    │
+    ▼
+1. Product Strategist   → Core Truth, JTBD, brutal MVP scope
+    │ (you approve)
+    ▼
+2. Market Researcher    → Blue Ocean gap, competitor teardown, Moat
+    │ (you approve)
+    ▼
+3. PRD Writer           → Amazon PR/FAQ, MECE user stories, edge cases
+    │ (you approve)
+    ▼
+4. UX Planner           → Fogg Behavior Model, frictionless flow, IA
+    │ (you approve)
+    ▼
+5. Code Planner         → SOLID architecture, zero-ops stack, issue-ready tasks
+    │ (you approve)
+    ▼
+6. Growth Marketer      → AIDA copy, viral loop, launch assets
+    │ (you approve)
+    ▼
+7. Monetization Advisor → Value-based pricing, tier anchoring
+    │ (you approve)
+    ▼
+8. Launch Operator      → Distribution matrix, T-minus calendar, KPIs
+    │ (you approve)
+    ▼
+9. Quality Evaluator    → Red-team audit. Rejects weak outputs automatically.
+    │
+    ▼
+output/*.md  ← your complete product plan on disk
+```
+
+---
+
+## Quick Start (60 seconds)
+
+```bash
+# 1. Clone
+git clone https://github.com/tksoft11/solo-builder-os.git
+cd solo-builder-os
+
+# 2. Install dependencies
+pip install -r core-engine/requirements.txt
+
+# 3. Set your API key
+cp .env.example .env
+# Edit .env and paste your OPENAI_API_KEY
+
+export OPENAI_API_KEY="sk-your-key-here"
+
+# 4. Run the full pipeline
+python solo-os.py
+```
+
+The tool will guide you through each step interactively. After each agent produces output, you can **approve (y)**, **stop (n)**, or **retry with feedback (r)**.
+Sessions are saved to `sessions/` — if your API call fails halfway, you can resume exactly where you stopped.
+
+---
+
+## What's inside
+
+| Path | What it does |
+| :--- | :--- |
+| `agents/` | 9 agent definitions with embedded frameworks (JTBD, Blue Ocean, SOLID, etc.) |
+| `solo-os.py` | CLI that runs the full 9-agent pipeline with session saving and human approval gates |
+| `core-engine/agent.py` | Autonomous ReAct loop with token tracking and cost estimation |
+| `core-engine/tools.py` | 6 tools: `read_file`, `write_file`, `list_directory`, `search_files`, `execute_command`, `ask_human` |
+| `ide-rules/cursorrules.md` | Drop-in rules for Cursor / Windsurf to enforce MVP scope in your editor |
+| `examples/` | End-to-end examples: Thai Calendar PWA, NicheTrend Radar |
+| `workflows/` | Step-by-step workflow documentation |
+
+---
+
+## The 9 Agents
+
+| # | Agent | Core Framework |
+| :- | :--- | :--- |
+| 1 | Product Strategist | First Principles · Jobs-to-be-Done |
+| 2 | Market Researcher | Blue Ocean Strategy · Moat Analysis |
+| 3 | PRD Writer | Amazon PR/FAQ · MECE |
+| 4 | UX Planner | Fogg Behavior Model · Cognitive Load |
+| 5 | Code Planner | SOLID · Zero-Ops (Jamstack/Serverless) |
+| 6 | Growth Marketer | AIDA · PAS · Viral Loop Design |
+| 7 | Monetization Advisor | Value-Based Pricing · Anchoring |
+| 8 | Launch Operator | Distribution Matrix · Traction KPIs |
+| 9 | Quality Evaluator | Red-Team · Self-Correction |
+
+---
+
+## Autonomous Agent (for developers)
+
+The `core-engine/` contains a standalone autonomous agent that can read, write, and execute code:
+
+```bash
+cd solo-builder-os
+python core-engine/agent.py
+# Choose an agent role, point it at a working directory, describe the task
+# It will think, act, observe, and self-correct until done
+```
+
+**What it can do:**
+- Read any file in your project
+- Write and create files
+- List directory structure before touching anything
+- Search across files with regex
+- Run terminal commands (with safety guardrails)
+- Ask you for clarification when genuinely stuck
+- Track token usage and estimate API cost
+
+---
+
+## Examples
+
+See [examples/](examples/) for complete end-to-end runs:
+- **[Thai Calendar PWA](examples/thai-calendar-pwa/)** — From "I want to show Thai holidays" to full SOLID architecture + Affiliate monetization plan.
+- **[NicheTrend Radar](examples/trend-curator/)** — From "track affiliate trends" to B2B SaaS pricing + Programmatic SEO launch plan.
+
+---
+
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md). PRs that add new agents, new tools, or real-world example runs are especially welcome.
+
+---
+
+*MIT License · Built for solo founders who are serious about shipping.*
