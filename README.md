@@ -4,7 +4,20 @@
 
 **Solo Builder OS** is an orchestration framework of AI Agents designed specifically for Solo Founders and Indie Hackers. It forces AI to stop acting like a "yes-man" chatbot and instead act like a rigorous, Silicon Valley-level product team.
 
-By utilizing high-level frameworks like **First Principles**, **Jobs-to-be-Done (JTBD)**, **Blue Ocean Strategy**, and **Amazon PR/FAQ**, this OS transforms a 1-sentence idea into a comprehensive strategy, market research report, PRD, and codebase architecture.
+### 🥊 ChatGPT (Default) vs Solo Builder OS
+| Feature | ChatGPT / Claude | Solo Builder OS |
+| :--- | :--- | :--- |
+| **Mindset** | Sycophant ("Great idea! Here are 20 features to build.") | Red Team ("This is bloated. Let's cut 15 features to find the true MVP.") |
+| **Frameworks** | Generic advice. | Enforces First Principles, Blue Ocean, and Fogg Behavior models. |
+| **Workflow** | Linear prompt-and-response. | **Feedback Control Loop:** Agent-to-Agent handoffs with strict human approval gates. |
+| **Code output** | Boilerplate code with technical debt. | **Zero-Ops SOLID Architecture:** Focuses on Serverless, Jamstack, and high-velocity scaling. |
+
+## 🚀 NEW: True Automation & IDE Integration
+
+This repository is no longer just a "Prompt Library". It is a true operating system.
+
+- **[solo-os.py](solo-os.py)**: A Python CLI tool that automates the workflow. It connects to the OpenAI API, runs the Product Strategist, waits for your approval, and hands the context directly to the Market Researcher and PRD Writer. You get a finished product plan in minutes.
+- **[ide-rules/cursorrules.md](ide-rules/cursorrules.md)**: Native integration for modern AI Editors (Cursor, Windsurf). Drop this file into your project, and your IDE will instantly adopt the "Staff-Level Architect" persona and enforce MVP scope.
 
 ## 🌟 The Agent Team (World-Class Edition)
 
