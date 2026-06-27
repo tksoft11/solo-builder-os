@@ -12,11 +12,12 @@
 | **Workflow** | Linear prompt-and-response. | **Feedback Control Loop:** Agent-to-Agent handoffs with strict human approval gates. |
 | **Code output** | Boilerplate code with technical debt. | **Zero-Ops SOLID Architecture:** Focuses on Serverless, Jamstack, and high-velocity scaling. |
 
-## 🚀 NEW: True Automation & IDE Integration
+## 🚀 NEW: True Automation & Autonomous Capabilities
 
 This repository is no longer just a "Prompt Library". It is a true operating system.
 
-- **[solo-os.py](solo-os.py)**: A Python CLI tool that automates the workflow. It connects to the OpenAI API, runs the Product Strategist, waits for your approval, and hands the context directly to the Market Researcher and PRD Writer. You get a finished product plan in minutes.
+- **[core-engine/](core-engine/) (The Autonomous ReAct Agent)**: We built a custom autonomous agent loop (similar to Devin or Claude Engineer). It uses OpenAI Function Calling to `read_file`, `write_file`, and `execute_command`. You give it a PRD, and it autonomously thinks, acts, and self-corrects until the code is written.
+- **[solo-os.py](solo-os.py)**: A Python CLI tool that automates the ideation workflow. It runs the Product Strategist, waits for your approval, and hands the context directly to the Market Researcher and PRD Writer.
 - **[ide-rules/cursorrules.md](ide-rules/cursorrules.md)**: Native integration for modern AI Editors (Cursor, Windsurf). Drop this file into your project, and your IDE will instantly adopt the "Staff-Level Architect" persona and enforce MVP scope.
 
 ## 🌟 The Agent Team (World-Class Edition)
